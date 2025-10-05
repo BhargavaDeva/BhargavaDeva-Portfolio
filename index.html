@@ -254,45 +254,78 @@
             margin-bottom: 1rem;
         }
 
-        /* Skills Section */
-        .skills-grid {
+        /* Skills Section - New Visual Design */
+        .skills-visual-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .skill-category {
+        .skill-visual-card {
             background: white;
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .skill-category:hover {
-            transform: translateY(-5px);
+        .skill-visual-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.3);
         }
 
-        .skill-category h3 {
+        .skill-visual-card h3 {
             color: #667eea;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             font-size: 1.3rem;
+            text-align: center;
         }
 
-        .skill-list {
-            list-style: none;
-        }
-
-        .skill-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
+        .skill-item {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            margin-bottom: 1.2rem;
         }
 
-        .skill-list li:last-child {
-            border-bottom: none;
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .skill-details {
+            flex: 1;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.3rem;
+        }
+
+        .skill-bar-container {
+            width: 100%;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            transition: width 1.5s ease;
         }
 
         /* Education Section */
@@ -469,6 +502,10 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .skills-visual-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -494,7 +531,7 @@
             <div class="hero-subtitle">DevOps & Cloud Engineer</div>
             <div class="hero-description">
                 2.5+ years experience building CI/CD pipelines and automating infrastructure at enterprise scale. 
-                Delivered 80+ security policies for compliance and governance across multiple client environments.
+                Delivered 60+ security policies for Azure services ensuring compliance and governance across multiple client environments.
             </div>
             <div class="cta-buttons">
                 <a href="#contact" class="btn btn-primary">Get In Touch</a>
@@ -513,7 +550,7 @@
                     
                     <p>After completing my M.S. in Data Analytics Engineering at George Mason University with a 3.90 GPA, I've focused on cloud automation and security compliance. Currently at HCLTech, I monitor and debug Azure DevOps CI/CD pipelines while managing infrastructure migrations with zero downtime.</p>
                     
-                    <p>My expertise spans across Terraform automation, Azure cloud platforms, and Policy as Code implementation, consistently delivering enterprise-grade solutions that enhance security and operational efficiency.</p>
+                    <p>My expertise spans across Terraform automation, Azure cloud platforms, and Policy as Code implementation, consistently delivering enterprise-grade solutions that enhance security and operational efficiency. I'm also familiar with AWS and GCP terminology, continuously expanding my multi-cloud knowledge.</p>
                 </div>
                 <div class="about-stats">
                     <div class="stat-card">
@@ -541,9 +578,9 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Associate, DevOps (IaC)</h3>
+                        <h3>Associate- IT Operations (Global)- DevOps -IaC (Infrastructure as Code)</h3>
                         <div class="company">HCLTech — IaC Managed Services Team</div>
-                        <div class="duration">June 2025 – Present | Remote from Fairfax, VA</div>
+                        <div class="duration">June 2025 – Present | Contract Full-Time | Remote from Fairfax, VA</div>
                         <ul>
                             <li>Monitor and debug Azure DevOps CI/CD pipelines, maintaining high deployment success rates</li>
                             <li>Resolve OPA policy issues across 80+ security policies while reducing deployment errors</li>
@@ -555,11 +592,11 @@
                 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Corporate Intern, Engineering (IaC)</h3>
+                        <h3>Corporate Intern, Global IT Engineering (IaC)</h3>
                         <div class="company">Arthur J. Gallagher & Co — Gallagher Technical Services</div>
-                        <div class="duration">June 2024 – November 2024 | Remote from Fairfax, VA</div>
+                        <div class="duration">September 2024 – November 2024 | Part-Time | Remote from Fairfax, VA</div>
                         <ul>
-                            <li>Developed and deployed 60+ OPA/Rego security policies for Azure services</li>
+                            <li>Developed and deployed OPA/Rego security policies for Azure services</li>
                             <li>Enhanced CI/CD pipeline efficiency through Git Bash optimization and testing methodologies</li>
                             <li>Updated Terraform provider versions and maintained infrastructure compatibility</li>
                             <li>Implemented resource whitelisting policies ensuring adherence to security standards</li>
@@ -569,9 +606,23 @@
                 
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <h3>Corporate Intern, Global IT Engineering (IaC)</h3>
+                        <div class="company">Arthur J. Gallagher & Co — Gallagher Technical Services</div>
+                        <div class="duration">June 2024 – August 2024 | Full-Time | Remote from Fairfax, VA</div>
+                        <ul>
+                            <li>Developed and deployed 60+ OPA/Rego security policies for Azure services</li>
+                            <li>Built comprehensive testing framework for policy validation</li>
+                            <li>Collaborated with security teams to define compliance requirements</li>
+                            <li>Documented policy implementation processes and best practices</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
                         <h3>Analyst Programmer</h3>
                         <div class="company">Ramco Systems — BASE AVIATION</div>
-                        <div class="duration">July 2021 – December 2022 | Chennai, India</div>
+                        <div class="duration">July 2021 – December 2022 | Full-Time Hybrid | Chennai, India</div>
                         <ul>
                             <li>Designed UI screens for Ramco Aviation System, increasing usability by 20%</li>
                             <li>Developed and tested SQL stored procedures, improving query performance by 30%</li>
@@ -587,60 +638,178 @@
     <section id="skills">
         <div class="container">
             <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
+            <div class="skills-visual-grid">
+                <div class="skill-visual-card">
                     <h3>Infrastructure as Code</h3>
-                    <ul class="skill-list">
-                        <li>Terraform</li>
-                        <li>HashiCorp Configuration Language (HCL)</li>
-                        <li>Terraform Modules & State Management</li>
-                        <li>Terraform Providers (Azure)</li>
-                    </ul>
+                    <div class="skill-item">
+                        <div class="skill-icon">TF</div>
+                        <div class="skill-details">
+                            <div class="skill-name">Terraform</div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">HCL</div>
+                        <div class="skill-details">
+                            <div class="skill-name">HashiCorp HCL</div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">📦</div>
+                        <div class="skill-details">
+                            <div class="skill-name">Terraform Modules</div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="skill-category">
+                <div class="skill-visual-card">
                     <h3>Cloud Platforms</h3>
-                    <ul class="skill-list">
-                        <li>Microsoft Azure</li>
-                        <li>Azure Resource Groups</li>
-                        <li>Azure Storage Accounts</li>
-                        <li>Azure Key Vault</li>
-                        <li>Azure Virtual Networks</li>
-                        <li>Azure Active Directory</li>
-                    </ul>
+                    <div class="skill-item">
+                        <div class="skill-icon">☁️</div>
+                        <div class="skill-details">
+                            <div class="skill-name">Microsoft Azure</div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🔐</div>
+                        <div class="skill-details">
+                            <div class="skill-name">Azure Key Vault</div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🌐</div>
+                        <div class="skill-details">
+                            <div class="skill-name">Azure Virtual Networks</div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">AD</div>
+                        <div class="skill-details">
+                            <div class="skill-name">Azure Active Directory</div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="skill-category">
+                <div class="skill-visual-card">
                     <h3>Security & Compliance</h3>
-                    <ul class="skill-list">
-                        <li>Policy as Code (OPA/Rego)</li>
-                        <li>Azure Policy</li>
-                        <li>Cloud Security Automation</li>
-                        <li>Access Control</li>
-                        <li>Compliance Monitoring</li>
-                    </ul>
+                    <div class="skill-item">
+                        <div class="skill-icon">🛡️</div>
+                        <div class="skill-details">
+                            <div class="skill-name">Policy as Code (OPA/Rego)</div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">📋</div>
+                        <div class="skill-details">
+                            <div class="skill-name">Azure Policy</div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🔒</div>
+                        <div class="skill-details">
+                            <div class="skill-name">Cloud Security Automation</div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="skill-category">
+                <div class="skill-visual-card">
                     <h3>CI/CD & Automation</h3>
-                    <ul class="skill-list">
-                        <li>Azure DevOps Pipelines</li>
-                        <li>Pipeline Troubleshooting</li>
-                        <li>Build & Release Management</li>
-                        <li>YAML Configuration</li>
-                        <li>Agent Pools & Service Connections</li>
-                    </ul>
+                    <div class="skill-item">
+                        <div class="skill-icon">⚙️</div>
+                        <div class="skill-details">
+                            <div class="skill-name">Azure DevOps Pipelines</div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🔧</div>
+                        <div class="skill-details">
+                            <div class="skill-name">Pipeline Troubleshooting</div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">📝</div>
+                        <div class="skill-details">
+                            <div class="skill-name">YAML Configuration</div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="skill-category">
+                <div class="skill-visual-card">
                     <h3>Programming & Tools</h3>
-                    <ul class="skill-list">
-                        <li>Bash Scripting</li>
-                        <li>SQL</li>
-                        <li>Python (Learning)</li>
-                        <li>Git & Git Bash</li>
-                        <li>BMC Helix Portal</li>
-                    </ul>
+                    <div class="skill-item">
+                        <div class="skill-icon">💻</div>
+                        <div class="skill-details">
+                            <div class="skill-name">Bash Scripting</div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">DB</div>
+                        <div class="skill-details">
+                            <div class="skill-name">SQL</div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🐍</div>
+                        <div class="skill-details">
+                            <div class="skill-name">Python (Learning)</div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">Git</div>
+                        <div class="skill-details">
+                            <div class="skill-name">Git & Git Bash</div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -730,51 +899,6 @@
                         <div class="contact-icon">💼</div>
                         <div>
                             <strong>Targeting Roles</strong><br>
-                            DevOps Engineer, Cloud Engineer, Data Engineer, Site Reliability Engineer (SRE)
+                            DevOps Engineer, Data Engineer, Cloud Engineer
                         </div>
-                    </div>                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Bhargava Devarakonda. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            this.reset();
-        });
-
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(102, 126, 234, 0.95)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-            }
-        });
-    </script>
-</body>
-</html>
+                    </div>
